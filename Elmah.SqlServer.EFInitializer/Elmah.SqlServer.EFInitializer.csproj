@@ -32,13 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Elmah">
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -66,10 +69,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Migrations\Create_ELMAH_GetErrorsXml.sql" />
-    <Content Include="Migrations\Create_ELMAH_GetErrorXml.sql" />
-    <Content Include="Migrations\Create_ELMAH_LogError.sql" />
-    <Content Include="Migrations\Drop_ELMAH_Procedures.sql" />
+    <EmbeddedResource Include="Migrations\Create_ELMAH_GetErrorsXml.sql" />
+    <EmbeddedResource Include="Migrations\Create_ELMAH_GetErrorXml.sql" />
+    <EmbeddedResource Include="Migrations\Create_ELMAH_LogError.sql" />
+    <EmbeddedResource Include="Migrations\Drop_ELMAH_Procedures.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
