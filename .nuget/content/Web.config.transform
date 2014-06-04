@@ -1,0 +1,18 @@
+<configuration>
+  <connectionStrings>
+    <!-- TODO: Set connection string for ElmahConnection. -->
+    <add name="ElmahConnection"
+         connectionString="*"
+         providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <entityFramework>
+    <contexts>
+      <context type="Elmah.SqlServer.EFInitializer.ElmahContext, Elmah.SqlServer.EFInitializer">
+        <databaseInitializer type="Elmah.SqlServer.EFInitializer.ElmahInitializer, Elmah.SqlServer.EFInitializer" />
+      </context>
+    </contexts>
+  </entityFramework>
+  <elmah>
+    <errorLog type="Elmah.SqlErrorLog, Elmah" connectionStringName="ElmahConnection" />
+  </elmah>
+</configuration>
