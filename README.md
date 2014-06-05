@@ -1,7 +1,7 @@
 Elmah.SqlServer.EFInitializer
 =============================
 
-**_This project is very young! Please do raise any issues that you find and I will try and resolve them._*
+**_This project is very young! Please do raise any issues that you find and I will try and resolve them._**
 
 Automatically creates Elmah database on SQL Server using Entity Framework migrations.
 
