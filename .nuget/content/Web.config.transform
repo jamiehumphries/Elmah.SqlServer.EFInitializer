@@ -1,6 +1,5 @@
 <configuration>
   <connectionStrings>
-    <!-- TODO: Set connection string for ElmahConnection. -->
     <add name="ElmahConnection"
          connectionString="*"
          providerName="System.Data.SqlClient" />
@@ -12,7 +11,4 @@
       </context>
     </contexts>
   </entityFramework>
-  <elmah>
-    <errorLog type="Elmah.SqlErrorLog, Elmah" connectionStringName="ElmahConnection" />
-  </elmah>
 </configuration>
