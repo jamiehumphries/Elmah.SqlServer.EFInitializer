@@ -13,6 +13,7 @@
     <dependencies>
       <dependency id="elmah.corelibrary" version="1.2.2" />
       <dependency id="EntityFramework" version="6.1.0" />
+      <dependency id="WebActivatorEx" version="2.0.5" />
     </dependencies>
   </metadata>
 </package>

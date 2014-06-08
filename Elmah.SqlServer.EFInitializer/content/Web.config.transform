@@ -21,7 +21,7 @@
   <entityFramework>
     <contexts>
       <context type="Elmah.SqlServer.EFInitializer.ElmahContext, Elmah.SqlServer.EFInitializer">
-        <databaseInitializer type="Elmah.SqlServer.EFInitializer.ElmahInitializer, Elmah.SqlServer.EFInitializer" />
+        <databaseInitializer type="Elmah.SqlServer.EFInitializer.ElmahDatabaseInitializer, Elmah.SqlServer.EFInitializer" />
       </context>
     </contexts>
   </entityFramework>
