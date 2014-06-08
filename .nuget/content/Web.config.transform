@@ -1,9 +1,23 @@
 <configuration>
-  <connectionStrings>
-    <add name="ElmahConnection"
-         connectionString="*"
-         providerName="System.Data.SqlClient" />
-  </connectionStrings>
+  <configSections>
+    <sectionGroup name="elmah">
+      <section name="errorLog" requirePermission="false" type="Elmah.ErrorLogSectionHandler, Elmah" />
+    </sectionGroup>
+  </configSections>
+  <system.web>
+    <httpModules>
+      <add name="ErrorLog" type="Elmah.ErrorLogModule, Elmah" />
+    </httpModules>
+  </system.web>
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false" />
+    <modules>
+      <add name="ErrorLog" type="Elmah.ErrorLogModule, Elmah" preCondition="managedHandler" />
+    </modules>
+  </system.webServer>
+  <elmah>
+    <errorLog type="Elmah.SqlErrorLog, Elmah" connectionStringName="DefaultConnection" />
+  </elmah>
   <entityFramework>
     <contexts>
       <context type="Elmah.SqlServer.EFInitializer.ElmahContext, Elmah.SqlServer.EFInitializer">
