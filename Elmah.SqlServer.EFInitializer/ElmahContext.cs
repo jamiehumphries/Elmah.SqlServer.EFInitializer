@@ -20,12 +20,12 @@ namespace Elmah.SqlServer.EFInitializer
 
             if (errorLogSection == null)
             {
-                throw new NullReferenceException("The elmah/errorLog section in web.config is missing.");
+                throw new ConfigurationErrorsException("The elmah/errorLog section in web.config is missing.");
             }
 
             if (!errorLogSection.Contains("connectionStringName"))
             {
-                throw new NullReferenceException("The elmah/errorLog section in web.config is missing \"connectionStringName\" property");
+                throw new ConfigurationErrorsException("The elmah/errorLog section in web.config is missing \"connectionStringName\" property");
             }
 
             var connectionStringName = errorLogSection["connectionStringName"].ToString();
