@@ -1,16 +1,15 @@
 namespace Elmah.SqlServer.EFInitializer
 {
     using System;
-    using System.Collections.Specialized;
+    using System.Collections;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity;
     using System.Configuration;
-    using System.Collections;
+    using System.Data.Entity;
 
     public class ElmahContext : DbContext
     {
-        private ElmahContext(string nameOrConnectionString) : base(nameOrConnectionString) { }
+        private ElmahContext(string nameOrConnectionString) : base(nameOrConnectionString) {}
 
         // ReSharper disable once InconsistentNaming
         public virtual DbSet<ELMAH_Error> ELMAH_Errors { get; set; }
@@ -20,20 +19,23 @@ namespace Elmah.SqlServer.EFInitializer
             var errorLogSection = ConfigurationManager.GetSection("elmah/errorLog") as IDictionary;
 
             if (errorLogSection == null)
-                throw new NullReferenceException("elmah/errorLog section in web.config is missing");
-
+            {
+                throw new NullReferenceException("The elmah/errorLog section in web.config is missing.");
+            }
 
             if (!errorLogSection.Contains("connectionStringName"))
-                throw new NullReferenceException("elmah/errorLog section in web.config is missing \"connectionStringName\" property");
+            {
+                throw new NullReferenceException("The elmah/errorLog section in web.config is missing \"connectionStringName\" property");
+            }
 
-
-            using (var context = new ElmahContext(errorLogSection["connectionStringName"].ToString()))
+            var connectionStringName = errorLogSection["connectionStringName"].ToString();
+            using (var context = new ElmahContext(connectionStringName))
             {
                 context.Database.Initialize(true);
             }
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder) { }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) {}
     }
 
     // ReSharper disable once InconsistentNaming
