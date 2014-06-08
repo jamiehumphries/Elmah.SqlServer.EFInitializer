@@ -4,8 +4,7 @@ Elmah.SqlServer.EFInitializer
 Automatically creates Elmah database on SQL Server using Entity Framework migrations.
 
 # Post-Install Actions
-1. Set the connection string for ElmahConnection (see the `TODO` in Web.config)
-2. Add a call to `ElmahContext.Initialize()` in start-up code (e.g. in Global.asax)
+1. Add a call to `ElmahContext.Initialize()` in start-up code (e.g. in Global.asax)
 
 **NOTE!**
 The intent of this package is _only_ to automate the creation of a backing SQL Server database for Elmah.
