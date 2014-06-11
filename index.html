@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Elmah Sql Server Initializer : Automatically creates an Elmah database on SQL Server using Entity Framework migrations." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Elmah Sql Server Initializer</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jamiehumphries/Elmah.SqlServer.EFInitializer">View on GitHub</a>
+
+          <h1 id="project_title">Elmah Sql Server Initializer</h1>
+          <h2 id="project_tagline">Automatically creates an Elmah database on SQL Server using Entity Framework migrations.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jamiehumphries/Elmah.SqlServer.EFInitializer/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jamiehumphries/Elmah.SqlServer.EFInitializer/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><strong><em>This project is very young! Please do raise any issues that you find and I will try and resolve them.</em></strong></p>
+
+<h4>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h4>
+
+<p>This project is available as a <a href="https://www.nuget.org/packages/Elmah.SqlServer.EFInitializer/">NuGet package</a>.
+It can be installed from the Visual Studio Package Manager Console using <code>Install-Package Elmah.SqlServer.EFInitializer</code>.</p>
+
+<h4>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h4>
+
+<p>By default the database will be created using the <code>DefaultConnection</code> connection string.</p>
+
+<p>If you wish to use a different connection string, you should declare a named string in the <code>connectionStrings</code> section of <code>Web.config</code> and edit the <code>connectionStringName</code> attribute on the <code>elmah / errorLog</code> configuration element. For example:</p>
+
+<div class="highlight highlight-xml"><pre><span class="nt">&lt;configuration&gt;</span>
+  <span class="c">&lt;!-- Other configuration omitted --&gt;</span>
+  <span class="nt">&lt;connectionStrings&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">name=</span><span class="s">"MyElmahConnection"</span>
+         <span class="na">connectionString=</span><span class="s">"Data Source=(local);Initial Catalog=MyElmah;Integrated Security=True;"</span>
+         <span class="na">providerName=</span><span class="s">"System.Data.SqlClient"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/connectionStrings&gt;</span>
+  <span class="nt">&lt;elmah&gt;</span>
+    <span class="nt">&lt;errorLog</span> <span class="na">type=</span><span class="s">"Elmah.SqlErrorLog, Elmah"</span> <span class="na">connectionStringName=</span><span class="s">"MyElmahConnection"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/elmah&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+
+<h4>
+<a name="usage-note" class="anchor" href="#usage-note"><span class="octicon octicon-link"></span></a>Usage note</h4>
+
+<p>The intent of this package is <em>only</em> to automate the creation of a backing SQL Server database for Elmah and provide enough configuration to do the basic logging. Errors will be logged to the database, but you will also need to install something like the main <a href="https://www.nuget.org/packages/elmah/">Elmah</a> package or <a href="https://www.nuget.org/packages/Elmah.MVC/">Elmah.MVC</a> to view them within the site.</p>
+
+<h4>
+<a name="acknowledgements" class="anchor" href="#acknowledgements"><span class="octicon octicon-link"></span></a>Acknowledgements</h4>
+
+<p>Credit must go to the creators of <a href="https://www.nuget.org/packages/elmah.sqlserver/1.2.0">Elmah.SqlServer</a>, the SQL from that project is what I used for the migrations.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Elmah Sql Server Initializer maintained by <a href="https://github.com/jamiehumphries">jamiehumphries</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
