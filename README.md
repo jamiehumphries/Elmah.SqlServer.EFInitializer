@@ -25,7 +25,8 @@ If you wish to use a different connection string, you should declare a named str
          providerName="System.Data.SqlClient" />
   </connectionStrings>
   <elmah>
-    <errorLog type="Elmah.SqlErrorLog, Elmah" connectionStringName="MyElmahConnection" />
+    <errorLog type="Elmah.SqlErrorLog, Elmah" 
+              connectionStringName="MyElmahConnection" />
   </elmah>
 </configuration>
 ```
