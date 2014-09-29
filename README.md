@@ -18,13 +18,13 @@ If you wish to use a different connection string, you should declare a named str
 <configuration>
   <!-- Other configuration omitted -->
   <connectionStrings>
-    <add name="MyElmahConnection"
-         connectionString="Data Source=(local);Initial Catalog=MyElmah;Integrated Security=True;"
+    <add name="ElmahConnection"
+         connectionString="Data Source=(local);Initial Catalog=Elmah;Integrated Security=True;"
          providerName="System.Data.SqlClient" />
   </connectionStrings>
   <elmah>
     <errorLog type="Elmah.SqlErrorLog, Elmah" 
-              connectionStringName="MyElmahConnection" />
+              connectionStringName="ElmahConnection" />
   </elmah>
 </configuration>
 ```
