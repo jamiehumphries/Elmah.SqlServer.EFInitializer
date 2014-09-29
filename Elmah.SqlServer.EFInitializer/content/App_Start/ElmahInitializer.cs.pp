@@ -6,8 +6,6 @@ using WebActivatorEx;
 namespace $rootnamespace$
 {
     using Elmah.SqlServer.EFInitializer;
-    using System.Collections;
-    using System.Configuration;
 
     public static class ElmahInitializer
     {
