@@ -1,20 +1,34 @@
 namespace Elmah.SqlServer.EFInitializer
 {
     using System;
+    using System.Collections;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Configuration;
     using System.Data.Entity;
 
     public class ElmahContext : DbContext
     {
-        public ElmahContext() {}
+        public ElmahContext() : this(GetConnectionStringFromConfig()) {}
 
         public ElmahContext(string nameOrConnectionString) : base(nameOrConnectionString) {}
 
         // ReSharper disable once InconsistentNaming
         public virtual DbSet<ELMAH_Error> ELMAH_Errors { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder) {}
+        private static string GetConnectionStringFromConfig()
+        {
+            var errorLogSection = ConfigurationManager.GetSection("elmah/errorLog") as IDictionary;
+            if (errorLogSection == null)
+            {
+                throw new ConfigurationErrorsException("The elmah/errorLog section in web.config is missing.");
+            }
+            if (!errorLogSection.Contains("connectionStringName"))
+            {
+                throw new ConfigurationErrorsException("The elmah/errorLog section in web.config is missing the \"connectionStringName\" property.");
+            }
+            return errorLogSection["connectionStringName"].ToString();
+        }
     }
 
     // ReSharper disable once InconsistentNaming
