@@ -6,10 +6,12 @@
     <title>Elmah SQL Server Initializer</title>
     <authors>Jamie Humphries</authors>
     <owners>Jamie Humphries</owners>
-    <projectUrl>https://github.com/jamiehumphries/Elmah.SqlServer.EFInitializer</projectUrl>
+    <projectUrl>http://jamiehumphries.github.io/Elmah.SqlServer.EFInitializer/</projectUrl>
     <licenseUrl>https://github.com/jamiehumphries/Elmah.SqlServer.EFInitializer/blob/master/LICENSE.md</licenseUrl>
+    <iconUrl>https://raw.githubusercontent.com/jamiehumphries/Elmah.SqlServer.EFInitializer/master/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Automatically creates Elmah database on SQL server using Entity Framework migrations.</description>
+    <description>Automatically creates Elmah database on SQL server using Entity Framework migrations. No manual configuration of database required.</description>
+    <tags>ELMAH error logging SQL Server MSSQL</tags>
     <copyright>Copyright 2014</copyright>
     <dependencies>
       <dependency id="elmah.corelibrary" version="1.2.2" />
