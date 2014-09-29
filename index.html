@@ -2,9 +2,9 @@
 <html>
 
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Elmah SQL Server Initializer : Automatically creates an Elmah database on SQL Server using Entity Framework migrations." />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Elmah SQL Server Initializer : Automatically creates an Elmah database on SQL Server using Entity Framework migrations.">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -31,9 +31,7 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p><strong><em>This project is very young! Please do raise any issues that you find via GitHub and I will try and resolve them.</em></strong></p>
-
-<h4>
+        <h4>
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h4>
 
 <p>This project is available as a <a href="https://www.nuget.org/packages/Elmah.SqlServer.EFInitializer/">NuGet package</a>.
@@ -49,13 +47,13 @@ It can be installed from the Visual Studio Package Manager Console using <code>I
 <div class="highlight highlight-xml"><pre><span class="nt">&lt;configuration&gt;</span>
   <span class="c">&lt;!-- Other configuration omitted --&gt;</span>
   <span class="nt">&lt;connectionStrings&gt;</span>
-    <span class="nt">&lt;add</span> <span class="na">name=</span><span class="s">"MyElmahConnection"</span>
-         <span class="na">connectionString=</span><span class="s">"Data Source=(local);Initial Catalog=MyElmah;Integrated Security=True;"</span>
+    <span class="nt">&lt;add</span> <span class="na">name=</span><span class="s">"ElmahConnection"</span>
+         <span class="na">connectionString=</span><span class="s">"Data Source=(local);Initial Catalog=Elmah;Integrated Security=True;"</span>
          <span class="na">providerName=</span><span class="s">"System.Data.SqlClient"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/connectionStrings&gt;</span>
   <span class="nt">&lt;elmah&gt;</span>
     <span class="nt">&lt;errorLog</span> <span class="na">type=</span><span class="s">"Elmah.SqlErrorLog, Elmah"</span> 
-              <span class="na">connectionStringName=</span><span class="s">"MyElmahConnection"</span> <span class="nt">/&gt;</span>
+              <span class="na">connectionStringName=</span><span class="s">"ElmahConnection"</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;/elmah&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
 </pre></div>
