@@ -21,11 +21,11 @@ namespace Elmah.SqlServer.EFInitializer
             var errorLogSection = ConfigurationManager.GetSection("elmah/errorLog") as IDictionary;
             if (errorLogSection == null)
             {
-                throw new ConfigurationErrorsException("The elmah/errorLog section in web.config is missing.");
+                throw new ConfigurationErrorsException("The elmah/errorLog section is missing from the application's configuration file.");
             }
             if (!errorLogSection.Contains("connectionStringName"))
             {
-                throw new ConfigurationErrorsException("The elmah/errorLog section in web.config is missing the \"connectionStringName\" property.");
+                throw new ConfigurationErrorsException("The elmah/errorLog section in the application's configuration file is missing the connectionStringName attribute.");
             }
             return errorLogSection["connectionStringName"].ToString();
         }
