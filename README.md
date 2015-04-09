@@ -1,6 +1,8 @@
 Elmah.SqlServer.EFInitializer
 =============================
 
+[![Build status](https://ci.appveyor.com/api/projects/status/1jbpq86t19ok1r2n/branch/master?svg=true)](https://ci.appveyor.com/project/jamiehumphries/elmah-sqlserver-efinitializer/branch/master)
+
 Automatically creates an Elmah database on SQL Server using Entity Framework migrations.
 
 #### Installation
