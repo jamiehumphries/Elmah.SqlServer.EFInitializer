@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmah.SqlServer.EFInitializer", "Elmah.SqlServer.EFInitializer\Elmah.SqlServer.EFInitializer.csproj", "{6D258795-5275-4C1B-868F-B6A20B25F953}"
 EndProject
@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0788A1
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmah.SqlServer.EFInitializer.Tests", "Elmah.SqlServer.EFInitializer.Tests\Elmah.SqlServer.EFInitializer.Tests.csproj", "{C8752DA9-2693-4439-A040-14E8D9AEB249}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,6 +24,10 @@ Global
 		{6D258795-5275-4C1B-868F-B6A20B25F953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D258795-5275-4C1B-868F-B6A20B25F953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D258795-5275-4C1B-868F-B6A20B25F953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8752DA9-2693-4439-A040-14E8D9AEB249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8752DA9-2693-4439-A040-14E8D9AEB249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8752DA9-2693-4439-A040-14E8D9AEB249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8752DA9-2693-4439-A040-14E8D9AEB249}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
