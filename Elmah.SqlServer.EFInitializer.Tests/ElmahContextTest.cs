@@ -1,14 +1,13 @@
 ﻿namespace Elmah.SqlServer.EFInitializer.Tests
 {
     using System;
-    using System.IO;
-
+    using System.Linq;
     using FluentAssertions;
 
     using NUnit.Framework;
 
     [TestFixture]
-    class ElmahContextTest
+    internal class ElmahContextTest
     {
         private ElmahContext _context;
 
@@ -16,8 +15,6 @@
         public void Init()
         {
             this._context = new ElmahContext("DefaultConnection");
-            var connectionString = this._context.Database.Connection.ConnectionString.Replace("|DataDirectory|", AppDomain.CurrentDomain.BaseDirectory);
-            this._context.Database.Connection.ConnectionString = connectionString;
             AppDomain.CurrentDomain.SetData("DataDirectory", System.IO.Directory.GetCurrentDirectory());
         }
 
@@ -40,7 +37,8 @@
 
             //result.Should().Be(1);
 
-            var error = await this._context.GetErrorXmlAsync(application, errorId);
+            var errors = await this._context.GetErrorXmlAsync(application, errorId);
+            errors.Single().Should().Be(allXml);
         }
     }
 }
