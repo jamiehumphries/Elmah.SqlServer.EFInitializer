@@ -9,15 +9,9 @@ namespace Elmah.SqlServer.EFInitializer
 
     public partial class ElmahContext : DbContext
     {
-        public ElmahContext()
-            : this(GetConnectionStringFromConfig())
-        {
-        }
+        public ElmahContext() : this(GetConnectionStringFromConfig()) {}
 
-        public ElmahContext(string nameOrConnectionString)
-            : base(nameOrConnectionString)
-        {
-        }
+        public ElmahContext(string nameOrConnectionString) : base(nameOrConnectionString) {}
 
         // ReSharper disable once InconsistentNaming
         public virtual DbSet<ELMAH_Error> ELMAH_Errors { get; set; }
