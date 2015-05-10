@@ -37,8 +37,8 @@
 
             //result.Should().Be(1);
 
-            var errors = await this._context.GetErrorXmlAsync(application, errorId);
-            errors.Single().Should().Be(allXml);
+            var error = await this._context.GetErrorXmlAsync(application, errorId);
+            error.Should().Be(allXml);
         }
     }
 }

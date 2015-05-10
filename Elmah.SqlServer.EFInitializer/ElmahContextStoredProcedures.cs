@@ -1,9 +1,9 @@
 ﻿namespace Elmah.SqlServer.EFInitializer
 {
     using System;
-    using System.Data.Entity.Core.Objects;
     using System.Data.Entity.Infrastructure;
     using System.Data.SqlClient;
+    using System.Linq;
     using System.Threading.Tasks;
 
     /// <summary>
@@ -17,12 +17,13 @@
         /// <param name="application">Application name.</param>
         /// <param name="errorId">Error Id.</param>
         /// <returns>Returns the set of court actions details.</returns>
-        public async virtual Task<ObjectResult<string>> GetErrorXmlAsync(string application, Guid errorId)
+        public virtual async Task<string> GetErrorXmlAsync(string application, Guid errorId)
         {
             var applicationParam = new SqlParameter("Application", application);
             var errorIdParam = new SqlParameter("ErrorId", errorId);
 
-            return await ((IObjectContextAdapter)this).ObjectContext.ExecuteStoreQueryAsync<string>("EXEC [ELMAH_GetErrorXml] @Application, @ErrorId", applicationParam, errorIdParam);
+            var results = await ((IObjectContextAdapter)this).ObjectContext.ExecuteStoreQueryAsync<string>("EXEC [ELMAH_GetErrorXml] @Application, @ErrorId", applicationParam, errorIdParam);
+            return results.SingleOrDefault();
         }
 
         /// <summary>
