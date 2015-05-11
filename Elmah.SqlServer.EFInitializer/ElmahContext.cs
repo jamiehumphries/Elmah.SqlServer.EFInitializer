@@ -7,7 +7,7 @@ namespace Elmah.SqlServer.EFInitializer
     using System.Configuration;
     using System.Data.Entity;
 
-    public class ElmahContext : DbContext
+    public partial class ElmahContext : DbContext
     {
         public ElmahContext() : this(GetConnectionStringFromConfig()) {}
 

@@ -64,6 +64,7 @@
   <ItemGroup>
     <None Include="content\App_Start\ElmahInitializer.cs.pp" />
     <Compile Include="ElmahContext.cs" />
+    <Compile Include="ElmahContextStoredProcedures.cs" />
     <Compile Include="ElmahDatabaseInitializer.cs" />
     <Compile Include="Migrations\201404262241021_InitialCreate.cs" />
     <Compile Include="Migrations\201404262241021_InitialCreate.Designer.cs">
