@@ -22,7 +22,7 @@ namespace Elmah.SqlServer.EFInitializer.Migrations
                          StatusCode = c.Int(false),
                          TimeUtc = c.DateTime(false),
                          Sequence = c.Int(false, true),
-                         AllXml = c.String(false, storeType: "ntext"),
+                         AllXml = c.String(false, storeType: "ntext")
                      })
                 .PrimaryKey(t => t.ErrorId);
 
